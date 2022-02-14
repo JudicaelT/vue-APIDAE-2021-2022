@@ -1,5 +1,5 @@
 <template>
-  <p>This is some content</p>
+  <div>toto</div>
 </template>
 
 <script>
