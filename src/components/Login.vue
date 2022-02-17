@@ -1,7 +1,19 @@
 <template>
-  <form action="https://vuejs.org/" method="post">
-    <input type="text" name="age" />
-  </form>
+  <div class="row">
+    <div class="col-11 mx-auto">
+      <form
+        class="d-flex flex-column"
+        action="https://vuejs.org/"
+        method="post"
+      >
+        <label class="form-label" for="login">Login :</label>
+        <input class="form-control" type="text" name="login" />
+        <label class="form-label" for="login">Password :</label>
+        <input class="form-control" type="password" name="password" />
+        <input class="btn btn-primary" type="submit" />
+      </form>
+    </div>
+  </div>
 </template>
 
 <script>
