@@ -1,21 +1,28 @@
 import Vue from "vue";
-import Router from "vue-router";
+import VueRouter from "vue-router";
 import Home from "@/components/Home";
 import Login from "@/components/Login";
 
-Vue.use(Router);
+Vue.use(VueRouter);
 
-export default new Router({
+const router = new VueRouter({
   routes: [
     {
-      name: "Home",
+      name: "Accueil",
       component: Home,
       path: "/"
     },
     {
-      name: "Login",
+      name: "Recettes",
+      component: Home,
+      path: "/recettes"
+    },
+    {
+      name: "Connexion",
       component: Login,
       path: "/login"
     }
   ]
 });
+
+export default router;

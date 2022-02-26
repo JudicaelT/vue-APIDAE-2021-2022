@@ -1,6 +1,6 @@
 <template>
   <div class="row">
-    <div class="col-11 mx-auto">
+    <div class="col-md-6 mx-auto my-4">
       <form
         class="d-flex flex-column"
         action="https://vuejs.org/"
@@ -10,7 +10,7 @@
         <input class="form-control" type="text" name="login" />
         <label class="form-label" for="login">Password :</label>
         <input class="form-control" type="password" name="password" />
-        <input class="btn btn-primary" type="submit" />
+        <input class="btn btn-warning mt-3" type="submit" />
       </form>
     </div>
   </div>
