@@ -23,4 +23,13 @@ export default {
 </script>
 
 <style>
+
+ label {
+   margin-top: 15px;
+ }
+
+ input[type="submit"] {
+   margin-top: 30px;
+ }
+
 </style>
