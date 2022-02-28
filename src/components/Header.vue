@@ -7,7 +7,9 @@
         <div class="col justify-content-between">
           <b-navbar toggleable="lg">
 
-            <h2 class="m-0">Cookclico</h2>
+            <router-link class="nav-item nav-link active"  to="/">
+              <h2 class="m-0">Cookclico</h2>
+            </router-link>
 
             <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
             <b-collapse id="nav-collapse" is-nav>
@@ -116,6 +118,10 @@ export default {
 </script>
 
 <style scoped>
+
+  h2 {
+    color: #2c3e50;
+  }
   
   .navbar-light .navbar-nav .nav-link {
     color: var(--yale);
