@@ -18,6 +18,7 @@ export default {
     Footer,
   },
 }
+
 </script>
 
 <style>
@@ -29,7 +30,8 @@ export default {
   --pink: #fc9a81;
   --salmon: #f5c0b2;
   --yale: #0d3f79;
-  --astra  : #f0ddac;
+  --astra: #f0ddac;
+  --grey: #ededed;
 
   --yale-active: #0a305c;
   --astra-active: #eed491;
@@ -89,6 +91,10 @@ body,
 
 .bg-astra {
   background-color: var(--astra);
+}
+
+.bg-grey {
+  background-color: var(--grey);
 }
 
 .text-yale {
@@ -169,5 +175,10 @@ body,
 
 .rounded-rounder {
   border-radius: 15px;
+}
+
+.rounded-rounder-right {
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
 }
 </style>

@@ -1,7 +1,9 @@
 <template>
   <footer>
-    Judicaël Terrisse & Joachim Da Silva
-    <span class="text-warning"> &copy; Copyright 2022</span>
+    <small>
+      Judicaël Terrisse & Joachim Da Silva
+      <span class="text-warning"> &copy; Copyright 2022</span>
+    </small>
   </footer>
 </template>
 

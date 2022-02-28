@@ -1,5 +1,5 @@
 <template>
-<!--
+
   <header class="d-flex py-3 justify-content-between align-items-center">
     <div class="container">
       <div class="row">
@@ -16,7 +16,7 @@
                   <router-link class="nav-item nav-link active" to="/">Accueil</router-link>
                 </b-nav-item>
                 <b-nav-item>
-                  <router-link class="nav-item nav-link" to="recettes">Recettes</router-link>
+                  <router-link class="nav-item nav-link active" to="/">Poster une recette</router-link>
                 </b-nav-item>
                 <b-nav-item>
                   <router-link class="nav-item nav-link d-lg-none" to="/login">Connexion</router-link>
@@ -31,12 +31,12 @@
       </div>
     </div>
   </header>
--->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+  <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
       <a class="navbar-brand d-flex align-items-center" href="#">
         <img
-          src="../assets/logo.png"
+          :src="getImageUrl('logo.png')"
           alt=""
           width="50"
           height="50"
@@ -106,7 +106,7 @@
         </div>
       </div>
     </div>
-  </nav>
+  </nav> -->
 </template>
 
 <script>
@@ -124,10 +124,6 @@ export default {
   .navbar-light .navbar-nav .nav-link.active,
   .navbar-light .navbar-nav .nav-link:hover {
     color: var(--yale-active);
-  }
-
-  .navbar-light .navbar-toggler {
-    border-color: var(--yale);
   }
 
 </style>
