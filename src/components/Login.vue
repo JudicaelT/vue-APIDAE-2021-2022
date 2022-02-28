@@ -1,17 +1,20 @@
 <template>
-  <div class="row">
-    <div class="col-md-6 mx-auto my-4">
-      <form
-        class="d-flex flex-column"
-        action="https://vuejs.org/"
-        method="post"
-      >
-        <label class="form-label" for="login">Login :</label>
-        <input class="form-control" type="text" name="login" />
-        <label class="form-label" for="login">Password :</label>
-        <input class="form-control" type="password" name="password" />
-        <input class="btn btn-warning mt-3" type="submit" />
-      </form>
+  <div class="container-fluid h-100">
+    <div class="row pb-5">
+      <div class="d-sm-none d-md-block col-4 py-5 rounded-rounder-right" :style="{'background-image': 'url('+ getImageUrl('food_background.jpg') +')'}"></div>
+      <div class="col d-flex justify-content-center align-items-center">
+        <form
+          class="d-flex flex-column w-75"
+          action="https://vuejs.org/"
+          method="post"
+        >
+          <label class="form-label" for="login">Nom :</label>
+          <input class="form-control rounded py-4 border-0 bg-grey" placeholder="eg : John Doe" type="text" name="login" />
+          <label class="form-label mt-3" for="login">Mot de passe :</label>
+          <input class="form-control rounded py-4 border-0 bg-grey" type="password" name="password" />
+          <input class="btn btn-astra rounded-pill py-2 mt-4" type="submit" />
+        </form>
+      </div>
     </div>
   </div>
 </template>
@@ -22,14 +25,15 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 
- label {
-   margin-top: 15px;
- }
+  .col {
+    min-height: calc(100vh - 64px);
+  }
 
- input[type="submit"] {
-   margin-top: 30px;
- }
+  div[style] {
+    background-position: center;
+    background-repeat: no-repeat;
+  }
 
 </style>
