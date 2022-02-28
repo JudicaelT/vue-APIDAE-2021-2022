@@ -177,6 +177,11 @@ body,
   border-radius: 15px;
 }
 
+.rounded-rounder-left {
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
 .rounded-rounder-right {
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;

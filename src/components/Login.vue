@@ -1,18 +1,21 @@
 <template>
-  <div class="container-fluid h-100">
+  <div class="container-fluid">
     <div class="row pb-5">
-      <div class="d-sm-none d-md-block col-4 py-5 rounded-rounder-right" :style="{'background-image': 'url('+ getImageUrl('food_background.jpg') +')'}"></div>
-      <div class="col d-flex justify-content-center align-items-center">
+      <div class="d-none d-md-block col-4 py-5 rounded-rounder-right" :style="{'background-image': 'url('+ getImageUrl('login_background.jpg') +')'}"></div>
+      <div class="col d-flex flex-column justify-content-center align-items-center">
         <form
           class="d-flex flex-column w-75"
           action="https://vuejs.org/"
           method="post"
         >
           <label class="form-label" for="login">Nom :</label>
-          <input class="form-control rounded py-4 border-0 bg-grey" placeholder="eg : John Doe" type="text" name="login" />
-          <label class="form-label mt-3" for="login">Mot de passe :</label>
+          <input class="form-control rounded py-4 border-0 bg-grey" placeholder="ex : John Doe" type="text" name="login" />
+          <label class="form-label mt-3" for="password">Mot de passe :</label>
           <input class="form-control rounded py-4 border-0 bg-grey" type="password" name="password" />
-          <input class="btn btn-astra rounded-pill py-2 mt-4" type="submit" />
+          <input class="btn btn-astra rounded-pill py-2 my-4" type="submit" />
+          <small>
+            Pas de compte ? <router-link to="/signIn">Insrivez-vous !</router-link>
+          </small>
         </form>
       </div>
     </div>
