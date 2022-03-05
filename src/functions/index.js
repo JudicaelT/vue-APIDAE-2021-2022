@@ -1,3 +1,5 @@
+//This file is where we put our global methods
+
 import Vue from "vue";
 
 Vue.mixin({

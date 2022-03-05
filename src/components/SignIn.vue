@@ -22,7 +22,7 @@
           <input class="btn btn-astra rounded-pill py-2 my-4" type="submit" />
 
           <small>
-            Déjà un compte ? <router-link to="/login">Connectez-vous !</router-link>
+            Déjà un compte ? <router-link to="/connexion">Connectez-vous !</router-link>
           </small>
         </form>
       </div>

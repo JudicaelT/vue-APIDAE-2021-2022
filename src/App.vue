@@ -31,7 +31,7 @@ export default {
   --salmon: #f5c0b2;
   --yale: #0d3f79;
   --astra: #f0ddac;
-  --grey: #ededed;
+  --grey: #eaeae6;
 
   --yale-active: #0a305c;
   --astra-active: #eed491;
@@ -173,6 +173,26 @@ body,
   flex: 5;
 }
 
+.border-1 {
+  border-width: 1px;
+}
+
+.border-2 {
+  border-width: 2px;
+}
+
+.border-3 {
+  border-width: 3px;
+}
+
+.border-4 {
+  border-width: 4px;
+}
+
+.border-5 {
+  border-width: 5px;
+}
+
 .rounded-rounder {
   border-radius: 15px;
 }
@@ -185,5 +205,9 @@ body,
 .rounded-rounder-right {
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
+}
+
+.card {
+  border: none;
 }
 </style>

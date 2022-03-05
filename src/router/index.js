@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import Home from "@/components/Home";
 import Login from "@/components/Login";
 import SignIn from "@/components/SignIn";
+import ReceiptPage from "@/components/ReceiptPage";
 
 Vue.use(VueRouter);
 
@@ -16,12 +17,17 @@ const router = new VueRouter({
     {
       name: "Connexion",
       component: Login,
-      path: "/login"
+      path: "/connexion"
     },
     {
       name: "Inscription",
       component: SignIn,
-      path: "/signIn"
+      path: "/inscription"
+    },
+    {
+      name: "Recette",
+      component: ReceiptPage,
+      path: "/recette/:id"
     }
   ]
 });

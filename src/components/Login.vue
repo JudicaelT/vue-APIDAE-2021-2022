@@ -14,7 +14,7 @@
           <input class="form-control rounded py-4 border-0 bg-grey" type="password" name="password" />
           <input class="btn btn-astra rounded-pill py-2 my-4" type="submit" />
           <small>
-            Pas de compte ? <router-link to="/signIn">Insrivez-vous !</router-link>
+            Pas de compte ? <router-link to="/inscription">Insrivez-vous !</router-link>
           </small>
         </form>
       </div>
