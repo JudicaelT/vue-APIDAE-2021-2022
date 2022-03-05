@@ -2,21 +2,21 @@
   <div class="container">
     <MealOfTheDay></MealOfTheDay>
     <MostPopular></MostPopular>
-    <Receipts></Receipts>
+    <Recipes></Recipes>
   </div>
 </template>
 
 <script>
 import MealOfTheDay from "@/components/Home/MealOfTheDay";
 import MostPopular from "@/components/Home/MostPopular";
-import Receipts from "@/components/Home/Receipts";
+import Recipes from "@/components/Home/Recipes";
 
 export default {
   name: "Home",
   components: {
     MealOfTheDay,
     MostPopular,
-    Receipts,
+    Recipes,
   },
 };
 </script>

@@ -9,7 +9,7 @@
     <div class="col-12 col-lg-8 rounded-rounder p-3 bg-grey">
       <div class="row overflow-auto flex-nowrap">
 
-        <MostPopularReceipt v-for="(mp, key) in mps" :id="mp.id" :name="mp.name" :thumbnail="mp.thumbnail" :key="key"></MostPopularReceipt>
+        <MostPopularRecipe v-for="(mp, key) in mps" :id="mp.id" :name="mp.name" :thumbnail="mp.thumbnail" :key="key"></MostPopularRecipe>
 
       </div>
     </div>
@@ -18,12 +18,12 @@
   
 <script>
 
-    import MostPopularReceipt from "@/components/Home/MostPopularReceipt";
+    import MostPopularRecipe from "@/components/Home/MostPopularRecipe";
 
     export default {
       name: "MostPopular",
       components: {
-        MostPopularReceipt,
+        MostPopularRecipe,
       },
       data () {
         return {
