@@ -1,28 +1,28 @@
 <template>
     <div class="row my-5">
-        <Receipt
-        v-for="(receipt, key) in receipts"
-            :id="receipt.id" :name="receipt.name"
-            :thumbnail="receipt.thumbnail"
-            :quantity="receipt.quantity"
-            :time="receipt.time"
-            :level="receipt.level"
+        <Recipe
+        v-for="(Recipe, key) in Recipes"
+            :id="Recipe.id" :name="Recipe.name"
+            :thumbnail="Recipe.thumbnail"
+            :quantity="Recipe.quantity"
+            :time="Recipe.time"
+            :level="Recipe.level"
             :key="key">
-        </Receipt>
+        </Recipe>
     </div>
 </template>
   
 <script>
-    import Receipt from "@/components/Home/Receipt";
+    import Recipe from "@/components/Home/Recipe";
 
     export default {
-      name: "Receipts",
+      name: "Recipes",
       components: {
-        Receipt,
+        Recipe,
       },
       data () {
         return {
-          receipts: [
+          Recipes: [
             {
               id: 1,
               name: 'Recette1',

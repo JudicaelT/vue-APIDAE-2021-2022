@@ -28,7 +28,7 @@
   
 <script>
     export default {
-      name: "Receipt",
+      name: "Recipe",
       props: [ 'id', 'name', 'thumbnail', 'quantity', 'time', 'level', ],
     };
 </script>

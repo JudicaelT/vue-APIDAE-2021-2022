@@ -1,10 +1,10 @@
 <template>
-    <div class="alert-danger">Receipt Page</div>
+    <div class="alert-danger">Recipe Page</div>
 </template>
   
 <script>
     export default {
-        name: "ReceiptPage",
+        name: "RecipePage",
     };
 </script>
   

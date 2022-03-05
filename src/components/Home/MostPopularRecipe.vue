@@ -17,7 +17,7 @@
   
 <script>
     export default {
-        name: "MostPopularReceipt",
+        name: "MostPopularRecipe",
         props: [ 'id', 'name', 'thumbnail' ],
         methods: {
 
