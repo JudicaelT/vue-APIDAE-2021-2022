@@ -21,12 +21,12 @@
                   <router-link class="nav-item nav-link active" to="/">Poster une recette</router-link>
                 </b-nav-item>
                 <b-nav-item>
-                  <router-link class="nav-item nav-link d-lg-none" to="/login">Connexion</router-link>
+                  <router-link class="nav-item nav-link d-lg-none" to="/connexion">Connexion</router-link>
                 </b-nav-item>
               </b-navbar-nav>
             </b-collapse>
 
-            <router-link class="btn btn-astra rounded-pill d-none d-lg-block" to="/login">Connexion</router-link>
+            <router-link class="btn btn-astra rounded-pill d-none d-lg-block" to="/connexion">Connexion</router-link>
           </b-navbar>
         </div>
 

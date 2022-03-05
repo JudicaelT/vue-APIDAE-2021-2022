@@ -1,46 +1,58 @@
 <template>
-    <div class="row bg-salmon overflow-hidden rounded-rounder">
-        <div class="col p-5 text-light">
+    <div class="row bg-astra overflow-hidden rounded-rounder">
+        <div class="col p-5">
             <small class="text-secondary text-uppercase ls-2">
                 - Plat du jour
             </small>
             <div class="my-3">
-                <h1>Lorem Ipsum</h1>
+                <h1>{{ MealOfTheDay.name }}</h1>
                 <div class="d-flex">
                     <p>
                         <b-icon-people-fill></b-icon-people-fill>
-                        3 personnes
+                        {{ MealOfTheDay.quantity }} personnes
                     </p>
                     <p class="ml-2">
                         <b-icon-clock-fill></b-icon-clock-fill>
-                        25 minutes
+                        {{ MealOfTheDay.time }} minutes
                     </p>
                     <p class="ml-2">
                         <b-icon-info-circle-fill></b-icon-info-circle-fill>
-                        Amateur
+                        {{ MealOfTheDay.level }}
                     </p>
                 </div>
             </div>
 
             <div class="btn-group" role="group">
-                <button class="btn btn-yale rounded-pill px-4 mr-3 shadow">
+                <router-link class="btn btn-dark rounded px-4 mr-3 shadow" :to="`/recette/${MealOfTheDay.id}`">
                     Voir la recette
-                </button>
-                <button class="btn btn-light rounded-circle d-flex align-items-center shadow">
+                </router-link>
+                <router-link class="btn btn-light rounded-circle d-flex align-items-center shadow" :to="`/ajouter_favori/${MealOfTheDay.id}`">
                     <b-icon-heart-fill class="text-warning"></b-icon-heart-fill>
-                </button>
+                </router-link>
             </div>
         </div>
         
         <div class="col-5 bg-img d-flex align-items-center">
-            <b-img fluid :src="getImageUrl('fried_chicken.png')"></b-img>
+            <b-img fluid :src="getImageUrl( `${MealOfTheDay.thumbnail}` )"></b-img>
         </div>
     </div>
 </template>
   
   <script>
     export default {
-        name: "MealOfTheDay"
+        name: "MealOfTheDay",
+        data () {
+        return {
+          MealOfTheDay: {
+              id: 1,
+              name: 'RecetteDuJour',
+              thumbnail: 'fried_chicken.png',
+              quantity: 5,
+              time: 20,
+              level: 'amateur',
+          },  
+        }
+      }
     };
   </script>
   
@@ -50,7 +62,7 @@
     }
 
     .bg-img {
-      background: radial-gradient(circle, #f5ded8 0%, #f4d1c6 35%, #f5c0b2 75%);
+      background: radial-gradient(circle, #e4ddcc 0%, #eee2c3 35%, var(--astra) 75%);
     }
   
   </style>
