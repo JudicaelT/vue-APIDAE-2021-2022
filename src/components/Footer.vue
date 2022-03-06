@@ -1,8 +1,8 @@
 <template>
   <footer>
     <small>
-      Judicaël Terrisse & Joachim Da Silva
-      <span class="text-warning"> &copy; Copyright 2022</span>
+      <span>Judicaël Terrisse & Joachim Da Silva</span><br />
+      <strong> &copy; Copyright 2022</strong>
     </small>
   </footer>
 </template>
@@ -18,10 +18,12 @@ footer {
   margin-top: auto;
   padding-top: 20px;
   padding-bottom: 20px;
-
   text-align: center;
+  color: var(--grey);
+  background-color: var(--yale-active);
+}
 
-  color: #f8f8f8;
-  background-color: #2c2c2c;
+footer strong {
+  color: var(--astra);
 }
 </style>
