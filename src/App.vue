@@ -43,13 +43,13 @@ export default {
 @font-face {
   font-family: "Roboto";
   font-weight: 400;
-  src: local("Roboto"), url("assets/fonts/Roboto/Roboto-Regular.ttf") format("truetype");
+  src: local("Roboto"), url("./assets/fonts/Roboto/Roboto-Regular.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "Roboto";
   font-weight: 500;
-  src: local("Roboto"), url("assets/fonts/Roboto/Roboto-Bold.ttf") format("truetype");
+  src: local("Roboto"), url("./assets/fonts/Roboto/Roboto-Bold.ttf") format("truetype");
 }
 
 /*
