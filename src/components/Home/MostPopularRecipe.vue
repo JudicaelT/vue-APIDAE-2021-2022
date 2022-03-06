@@ -1,6 +1,6 @@
 <template>
     <div class="card rounded-rounder overflow-hidden mx-3">
-        <div class="card-thumbnail overflow-hidden d-flex align-items-center">
+        <div class="thumbnail overflow-hidden d-flex align-items-center">
             <b-img fluid :src="getImageUrl( `${thumbnail}` )"></b-img>
         </div>
         <div class="h-0 d-flex justify-content-center align-items-center">
@@ -19,20 +19,6 @@
     export default {
         name: "MostPopularRecipe",
         props: [ 'id', 'name', 'thumbnail' ],
-        methods: {
-
-          /**
-            * Sets the height of the thumbnail (n% of the current width)
-            */
-          setThumbnailHeight(n) {
-            let cardThumbnails = this.$el.querySelectorAll('.card-thumbnail');
-
-            cardThumbnails.forEach(function(cardThumbnail) {
-                cardThumbnail.style.height = cardThumbnail.offsetWidth * n +"px";
-            });
-          }
-
-        },
 
         mounted(){
           this.setThumbnailHeight(0.6); // 60%
@@ -42,7 +28,7 @@
   
 <style scoped>
 
-    .card-thumbnail {
+    .thumbnail {
         min-height: 110px;
     }
 

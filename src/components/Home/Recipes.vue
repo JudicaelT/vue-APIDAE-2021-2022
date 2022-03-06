@@ -2,12 +2,12 @@
     <div class="row my-5">
         <Recipe
         v-for="(Recipe, key) in Recipes"
-            :id="Recipe.id" :name="Recipe.name"
-            :thumbnail="Recipe.thumbnail"
-            :quantity="Recipe.quantity"
-            :time="Recipe.time"
-            :level="Recipe.level"
-            :key="key">
+          :id="Recipe.id" :name="Recipe.name"
+          :thumbnail="Recipe.thumbnail"
+          :quantity="Recipe.quantity"
+          :time="Recipe.time"
+          :level="Recipe.level"
+          :key="key">
         </Recipe>
     </div>
 </template>

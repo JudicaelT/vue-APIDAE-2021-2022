@@ -1,7 +1,7 @@
 <template>
     <div class="col-sm-6 col-md-4">
         <div class="card overflow-hidden bg-astra shadow rounded-rounder">
-            <div class="overflow-hidden rounded-rounder d-flex align-items-center bg-light" style="height: 150px;">
+            <div class="thumbnail overflow-hidden rounded-rounder d-flex align-items-center bg-light">
                 <b-img fluid :src="getImageUrl( `${thumbnail}` )"></b-img>
             </div>
             <div class="row p-3">
@@ -30,6 +30,10 @@
     export default {
       name: "Recipe",
       props: [ 'id', 'name', 'thumbnail', 'quantity', 'time', 'level', ],
+
+      mounted(){
+        this.setThumbnailHeight(0.4); // 40%
+      },
     };
 </script>
   

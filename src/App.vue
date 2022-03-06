@@ -27,18 +27,18 @@ export default {
  * Defining variables for reccuring values
  */
 :root {
-  --pink: #fc9a81;
-  --salmon: #f5c0b2;
+  --like: #f53954;
   --yale: #0d3f79;
   --astra: #f0ddac;
   --grey: #eaeae6;
 
+  --like-active: #f11536;
   --yale-active: #0a305c;
   --astra-active: #eed491;
 }
 
 /*
- * Adding every variation of roboto Roboto
+ * Adding Roboto font
  */
 @font-face {
   font-family: "Roboto";
@@ -63,7 +63,7 @@ body,
 }
 
 #app {
-  /* Again, we use display flex for the sticky footer*/
+  /* Again, we use display flex for the sticky footer */
   display: flex;
   flex-direction: column;
 
@@ -77,12 +77,8 @@ body,
  * Some CSS classes similar to bootstrap
  */
 
-.bg-pink {
-  background-color: var(--pink);
-}
-
-.bg-salmon {
-  background-color: var(--salmon);
+.bg-like {
+  background-color: var(--like);
 }
 
 .bg-yale {
@@ -107,10 +103,22 @@ body,
   border-color: var(--yale);
 }
 
+.btn-like {
+  color: #fff;
+  background-color: var(--like);
+  border-color: var(--like);
+}
+
 .btn-astra {
   color: #000;
   background-color: var(--astra);
   border-color: var(--astra);
+}
+
+.btn-like:hover {
+  color: #fff;
+  background-color: var(--like-active);
+  border-color: var(--like-active);
 }
 
 .btn-yale:hover {
@@ -205,6 +213,10 @@ body,
 .rounded-rounder-right {
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
+}
+
+.thumbnail {
+  min-height: 110px;
 }
 
 .card {
