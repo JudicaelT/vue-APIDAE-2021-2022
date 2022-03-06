@@ -50,12 +50,7 @@
 </script>
   
 <style scoped>
-
-    .card-thumbnail {
-        min-height: 110px;
-    }
-
-    .card {
-        min-width: 220px;
-    }
+  .card {
+      min-width: 220px;
+  }
 </style>
