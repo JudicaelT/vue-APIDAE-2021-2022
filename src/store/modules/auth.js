@@ -17,8 +17,8 @@ const posts = {
         })
         .then(
           (response) => {
-            if (response.jwt) {
-              user.token = response.jwt;
+            if (response.data.jwt) {
+              user.tokenJWT = response.data.jwt;
               localStorage.setItem("user", JSON.stringify(user));
             }
             commit("loginSuccess", user);

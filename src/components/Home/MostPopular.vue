@@ -31,17 +31,17 @@
             {
               id: 1,
               name: 'Recette1',
-              thumbnail: 'ghibli1.jpeg',
+              thumbnail: require('@/assets/img/ghibli1.jpeg'),
             },
             {
               id: 2,
               name: 'Recette2',
-              thumbnail: 'fried_chicken.png',
+              thumbnail: require('@/assets/img/fried_chicken.png'),
             },
             {
               id: 3,
               name: 'Recette3',
-              thumbnail: 'japanese_food.png',
+              thumbnail: require('@/assets/img/japanese_food.png'),
             },
           ]
         }
