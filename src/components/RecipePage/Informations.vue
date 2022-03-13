@@ -5,24 +5,24 @@
       <li>
         <b-icon-people></b-icon-people>
         <label class="px-2">Quantité :</label>
-        <b>{{informations.quantity}} personnes</b>
+        <b>{{quantity}} personnes</b>
       </li>
       <li>
         <b-icon-clock></b-icon-clock>
         <label class="px-2">Temps :</label>
-        <b>{{informations.time}} minutes</b>
+        <b>{{time}} minutes</b>
       </li>
       <li>
         <b-icon-info-circle></b-icon-info-circle>
         <label class="px-2">Niveau : </label>
-        <b>{{informations.level}}</b>
+        <b>{{level}}</b>
       </li>
     </ul>
     
     <h5>Ingrédients</h5>
     <ul>
       <li v-for="ingredient in ingredients" :key="ingredient.key">
-        {{ ingredient.name }} <small class="text-secondary">{{ ingredient.quantity }} {{ ingredient.typeQuantity }}</small>
+        {{ ingredient.text }} <small class="text-secondary">{{ ingredient.qte }} {{ ingredient.typeQte }}</small>
       </li>
     </ul>
   </div>
@@ -31,6 +31,6 @@
 <script>
   export default {
     name: "Informations",
-    props: [ 'informations', 'ingredients', ],
+    props: [ 'quantity', 'time', 'level', 'ingredients', ],
   };
 </script>

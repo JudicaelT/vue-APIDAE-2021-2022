@@ -2,23 +2,31 @@
   <div class="container">
 
     <Heading
-      :id="RecipeData.id"
-      :name="RecipeData.name"
-      :thumbnail="RecipeData.thumbnail"
-      :nbLike="RecipeData.nbLike"
-      :description="RecipeData.description"
+    v-for="(rec, key) in recipe"
+      :id="rec._id"
+      :name="rec.nom"
+      :thumbnail="rec.thumbnail"
+      :nbLike="rec.likes"
+      :description="rec.description"
+      :key="key"
     >
     </Heading>
 
     <div class="row my-5">
       <Preparation
-        :preparation="RecipeData.preparation"
+      v-for="(rec, key) in recipe"
+        :preparation="rec.description"
+        :key="key"
       >
       </Preparation>
 
       <Informations
-        :informations="RecipeData.informations"
-        :ingredients="RecipeData.ingredients"
+      v-for="(rec, key) in recipe"
+        :quantity="rec.nbPersonne"
+        :time="rec.time"
+        :level="rec.level"
+        :ingredients="rec.lines"
+        :key="key">
       >
       </Informations>
     </div>
@@ -27,6 +35,7 @@
 </template>
   
 <script>
+  import { mapState } from 'vuex';
   import Heading from "@/components/RecipePage/Heading";
   import Preparation from "@/components/RecipePage/Preparation";
   import Informations from "@/components/RecipePage/Informations";
@@ -38,39 +47,11 @@
       Preparation,
       Informations
     },
-    data () {
-			return {
-				RecipeData: {
-          id: 1,
-          name: 'Recette1',
-          thumbnail: 'cassoulet.webp',
-          nbLike: 65,
-          description: 'Lorem',
-          preparation: 'Lorem Ipsum',
-          informations: {
-            quantity: 5,
-            time: 20,
-            level: 'amateur',
-          },
-          ingredients: [
-            {
-              name: 'patates',
-              quantity: 1,
-              typeQuantity: 'kg',
-            },
-            {
-              name: 'carrotes',
-              quantity: 500,
-              typeQuantity: 'g',
-            },
-            {
-              name: 'Eau',
-              quantity: 400,
-              typeQuantity: 'ml',
-            },
-          ],
-        },
-			}
-		}
+    computed: {
+      ...mapState('recipes', ['recipe'])
+    },
+    created() {
+      this.$store.dispatch('recipes/loadRecipe')
+    }
   };
 </script>
