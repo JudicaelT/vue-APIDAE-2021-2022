@@ -19,6 +19,7 @@ const posts = {
           (response) => {
             if (response.data.jwt) {
               user.tokenJWT = response.data.jwt;
+              user.recettesLiked = response.data.user.recettesLiked;
               localStorage.setItem("user", JSON.stringify(user));
             }
             commit("loginSuccess", user);

@@ -27,10 +27,7 @@ export default {
     ...mapState("recipes", ["recipes"]),
   },
   created() {
-    this.$store.dispatch(
-      "recipes/loadRecipes",
-      this.$store.state.auth?.user?.tokenJWT
-    );
+    this.$store.dispatch("recipes/loadRecipes");
   },
 };
 </script>

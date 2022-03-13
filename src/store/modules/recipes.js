@@ -1,5 +1,6 @@
 import axios from "axios";
 import router from "@/router";
+import store from "@/store";
 
 const API_URL = "https://dsv-api-recipe.herokuapp.com/";
 const recipes = {
@@ -26,7 +27,7 @@ const recipes = {
       axios
         .get(API_URL + "getRecettes", {
           headers: {
-            Authorization: "Bearer " + token
+            Authorization: "Bearer " + store.state.auth?.user?.tokenJWT
           }
         })
         .then((res) => {
@@ -39,11 +40,13 @@ const recipes = {
      * Loads a recipe from the database
      * using 'getRecette/:id' method (:id is defined in the url)
      */
-    loadRecipe({ commit }) {
+    loadRecipe({ commit }, token) {
       axios
-        .get(
-          "http://localhost:5000/getRecette/" + router.currentRoute.params.id
-        )
+        .get(API_URL + "getRecette/" + router.currentRoute.params.id, {
+          headers: {
+            Authorization: "Bearer " + store.state.auth?.user?.tokenJWT
+          }
+        })
         .then((res) => {
           commit("SET_RECIPE", res.data);
         })
