@@ -12,30 +12,18 @@
             <b-collapse id="nav-collapse" is-nav>
               <b-navbar-nav class="mx-auto">
                 <b-nav-item>
-                  <router-link class="nav-item nav-link active" to="/"
-                    >Accueil</router-link
-                  >
+                  <router-link class="nav-item nav-link active" to="/">Accueil</router-link>
                 </b-nav-item>
                 <b-nav-item>
-                  <router-link class="nav-item nav-link active" to="/"
-                    >Poster une recette</router-link
-                  >
+                  <router-link class="nav-item nav-link active" to="/ajouter_recette">Poster une recette</router-link>
                 </b-nav-item>
                 <b-nav-item>
-                  <router-link
-                    class="nav-item nav-link d-lg-none"
-                    to="/connexion"
-                    >Connexion</router-link
-                  >
+                  <router-link class="nav-item nav-link d-lg-none" to="/connexion">Connexion</router-link>
                 </b-nav-item>
               </b-navbar-nav>
             </b-collapse>
 
-            <router-link
-              class="btn btn-astra rounded-pill d-none d-lg-block"
-              to="/connexion"
-              >Connexion</router-link
-            >
+            <router-link class="btn btn-astra rounded-pill d-none d-lg-block" to="/connexion">Connexion</router-link>
           </b-navbar>
         </div>
       </div>
@@ -44,22 +32,22 @@
 </template>
 
 <script>
-export default {
-  name: "Header",
-};
+  export default {
+    name: "Header",
+  };
 </script>
 
 <style scoped>
-h2 {
-  color: #2c3e50;
-}
+  h2 {
+    color: #2c3e50;
+  }
 
-.navbar-light .navbar-nav .nav-link {
-  color: var(--yale);
-}
+  .navbar-light .navbar-nav .nav-link {
+    color: var(--yale);
+  }
 
-.navbar-light .navbar-nav .nav-link.active,
-.navbar-light .navbar-nav .nav-link:hover {
-  color: var(--yale-active);
-}
+  .navbar-light .navbar-nav .nav-link.active,
+  .navbar-light .navbar-nav .nav-link:hover {
+    color: var(--yale-active);
+  }
 </style>

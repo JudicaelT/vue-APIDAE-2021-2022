@@ -222,4 +222,8 @@ body,
 .card {
   border: none;
 }
+
+.cursor-pointer {
+  cursor: pointer;
+}
 </style>
