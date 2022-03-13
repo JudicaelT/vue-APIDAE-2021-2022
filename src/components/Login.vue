@@ -15,6 +15,9 @@
           @submit.prevent="handleLogin"
           method="post"
         >
+          <p v-if="message" class="alert alert-danger">
+            {{ message }}
+          </p>
           <label class="form-label" for="login">Nom d'utilisateur :</label>
           <input
             class="form-control rounded py-4 border-0 bg-grey"
@@ -50,6 +53,7 @@ export default {
     return {
       backgroundImage: `url(${require("@/assets/img/login_background.jpg")})`,
       user: new User("", ""),
+      message: "",
     };
   },
   computed: {
@@ -64,13 +68,21 @@ export default {
   },
   methods: {
     handleLogin() {
+      if (this.user.username.length === 0) {
+        this.message = "Veuillez inscrire un nom d'utilisateur";
+        return;
+      }
+      if (this.user.password.length === 0) {
+        this.message = "Veuillez inscrire un mot de passe";
+        return;
+      }
       if (this.user.username && this.user.password) {
         this.$store.dispatch("auth/login", this.user).then(
           () => {
             this.$router.push("/");
           },
           (error) => {
-            console.log(error);
+            this.message = "Utilisateur inexistant ou mot de passe incorrecte";
           }
         );
       }

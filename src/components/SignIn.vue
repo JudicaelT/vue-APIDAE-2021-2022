@@ -7,6 +7,9 @@
           @submit.prevent="handleRegister"
           method="post"
         >
+          <p v-if="message" class="alert alert-danger">
+            {{ message }}
+          </p>
           <label class="form-label" for="login">Nom d'utilisateur :</label>
           <input
             class="form-control rounded py-4 border-0 bg-grey"
@@ -31,6 +34,7 @@
             class="form-control rounded py-4 border-0 bg-grey"
             type="password"
             name="password-repeat"
+            v-model="confirmpassword"
           />
 
           <input class="btn btn-astra rounded-pill py-2 my-4" type="submit" />
@@ -59,6 +63,8 @@ export default {
     return {
       backgroundImage: `url(${require("@/assets/img/sign_in_background.jpg")})`,
       user: new User("", ""),
+      confirmpassword: "",
+      message: "",
     };
   },
   computed: {
@@ -73,6 +79,19 @@ export default {
   },
   methods: {
     handleRegister() {
+      if (this.user.username.length <= 4) {
+        this.message = "Veuillez inscrire un nom d'utilisateur (+4 caractères)";
+        return;
+      }
+      if (this.user.password.length <= 6) {
+        this.message =
+          "Veuillez inscrire un mot de passe a plus de 6 caractères";
+        return;
+      }
+      if (this.user.password !== this.confirmpassword) {
+        this.message = "Les mots de passes sont différents";
+        return;
+      }
       this.$store.dispatch("auth/register", this.user).then(
         (data) => {
           this.$router.push("/connexion");
