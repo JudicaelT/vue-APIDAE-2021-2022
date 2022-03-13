@@ -15,7 +15,7 @@
     <div class="row my-5">
       <Preparation
       v-for="(rec, key) in recipe"
-        :preparation="rec.description"
+        :preparation="rec.preparation"
         :key="key"
       >
       </Preparation>
