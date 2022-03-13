@@ -32,7 +32,7 @@
       props: [ 'id', 'name', 'thumbnail', 'quantity', 'time', 'level', ],
 
       mounted(){
-        this.setThumbnailHeight(0.4); // 40%
+        this.setThumbnailHeight(0.4); // 40% of current width
       },
     };
 </script>

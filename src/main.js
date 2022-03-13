@@ -5,8 +5,9 @@ import "bootstrap-vue/dist/bootstrap-vue.css";
 
 import Vue from "vue";
 import App from "@/App.vue";
-import Functions from "@/functions/index";
+import functions from "@/functions/index";
 import router from "@/router";
+import store from './store'
 
 Vue.use(BootstrapVue);
 Vue.use(IconsPlugin);
@@ -14,7 +15,8 @@ Vue.use(IconsPlugin);
 Vue.config.productionTip = false;
 
 new Vue({
-  Functions,
+  functions,
   router,
+  store,
   render: (h) => h(App)
 }).$mount("#app");
