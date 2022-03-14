@@ -1,5 +1,5 @@
 <template>
-    <div class="col-sm-6 col-md-4">
+    <div class="col-sm-6 col-md-4 mb-4">
         <div class="card overflow-hidden bg-astra shadow rounded-rounder">
             <div class="thumbnail overflow-hidden rounded-rounder d-flex align-items-center bg-light">
                 <b-img fluid :src="getImageUrl( `${thumbnail}` )"></b-img>

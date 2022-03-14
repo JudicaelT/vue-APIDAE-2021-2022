@@ -53,7 +53,8 @@ const recipes = {
         loadMostPopularRecipes({commit}) {
             axios.get('http://localhost:5000/getRecettesByPopularity')
             .then(res => {
-                commit('SET_MOST_POPULAR_RECIPES', res.data)
+                res.data.splice(3);
+                commit('SET_MOST_POPULAR_RECIPES', res.data);
             })
             .catch(error => console.log(error))
         },
