@@ -23,18 +23,28 @@
                 </div>
             </div>
         </div>
+        <div class="d-flex align-items-center px-3">
+          <router-link
+            class="btn btn-yale rounded d-flex align-items-center shadow"
+            :to="`/recette/${id}`"
+          >
+            <b-icon-eye class="text-light"></b-icon-eye>
+          </router-link>
+        </div>
+      </div>
     </div>
+  </div>
 </template>
   
 <script>
-    export default {
-      name: "Recipe",
-      props: [ 'id', 'name', 'thumbnail', 'quantity', 'time', 'level', ],
+export default {
+  name: "Recipe",
+  props: ["id", "name", "thumbnail", "quantity", "time", "level"],
 
-      mounted(){
-        this.setThumbnailHeight(0.4); // 40% of current width
-      },
-    };
+  mounted() {
+    this.setThumbnailHeight(0.4); // 40% of current width
+  },
+};
 </script>
   
 <style scoped>
