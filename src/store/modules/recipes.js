@@ -4,19 +4,25 @@ import store from "@/store";
 
 const API_URL = "https://dsv-api-recipe.herokuapp.com/";
 const recipes = {
-  namespaced: true,
-  state: {
-    recipes: null,
-    recipe: null
-  },
+    namespaced: true,
+    state: {
+        recipes: null,
+        recipe: null,
+        mostPopularRecipes: null,
+},
   mutations: {
     SET_RECIPES(state, data) {
-      state.recipes = data;
+      state.recipes = data
     },
 
-    SET_RECIPE(state, data) {
-      state.recipe = data;
-    }
+        SET_RECIPE(state, data) {
+            state.recipe = data
+        },
+
+        SET_MOST_POPULAR_RECIPES(state, data) {
+            state.mostPopularRecipes = data
+        }
+    },
   },
   actions: {
     /**
@@ -52,6 +58,21 @@ const recipes = {
         })
         .catch((error) => console.log(error));
     },
+      
+    
+
+        /**
+         * Loads the 3 most popular recipes from the database
+         * using 'getRecettesByPopularity' method from the API
+         */
+        loadMostPopularRecipes({commit}) {
+            axios.get('http://localhost:5000/getRecettesByPopularity')
+            .then(res => {
+                res.data.splice(3);
+                commit('SET_MOST_POPULAR_RECIPES', res.data);
+            })
+            .catch(error => console.log(error))
+        },
 
     /**
      * Add a recipe to the database

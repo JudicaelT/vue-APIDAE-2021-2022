@@ -9,7 +9,7 @@
     <div class="col-12 col-lg-8 rounded-rounder p-3 bg-grey">
       <div class="row overflow-auto flex-nowrap">
 
-        <MostPopularRecipe v-for="(mp, key) in mps" :id="mp.id" :name="mp.name" :thumbnail="mp.thumbnail" :key="key"></MostPopularRecipe>
+        <MostPopularRecipe v-for="(recipe, key) in mostPopularRecipes" :id="recipe._id" :name="recipe.nom" :thumbnail="recipe.thumbnail" :key="key"></MostPopularRecipe>
 
       </div>
     </div>
@@ -17,7 +17,7 @@
 </template>
   
 <script>
-
+    import { mapState } from 'vuex';
     import MostPopularRecipe from "@/components/Home/MostPopularRecipe";
 
     export default {
@@ -25,26 +25,11 @@
       components: {
         MostPopularRecipe,
       },
-      data () {
-        return {
-          mps: [
-            {
-              id: 1,
-              name: 'Recette1',
-              thumbnail: require('@/assets/img/ghibli1.jpeg'),
-            },
-            {
-              id: 2,
-              name: 'Recette2',
-              thumbnail: require('@/assets/img/fried_chicken.png'),
-            },
-            {
-              id: 3,
-              name: 'Recette3',
-              thumbnail: require('@/assets/img/japanese_food.png'),
-            },
-          ]
-        }
+      computed: {
+        ...mapState('recipes', ['mostPopularRecipes'])
+      },
+      created() {
+        this.$store.dispatch('recipes/loadMostPopularRecipes')
       }
     };
 </script>

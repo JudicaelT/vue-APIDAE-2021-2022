@@ -8,6 +8,11 @@
             <b-icon-heart-fill class="text-astra"></b-icon-heart-fill>
             <i class="ml-2">{{ nbLike }} j'aimes</i>
           </router-link>
+
+          <button class="btn btn-danger shadow ml-2" id="button-delete" v-on:click="deleteRecipe()">
+            <b-icon-trash class="text-astra"></b-icon-trash>
+            <i class="ml-2">supprimer</i>
+          </button>
         </div>
       </div>
       <div class="row mt-4">
@@ -27,8 +32,13 @@
 <script>
   export default {
     name: "Heading",
+
     props: [ 'id', 'name', 'thumbnail', 'nbLike', 'description', ],
+
+    methods: {
+      deleteRecipe: function() {
+        this.$store.dispatch('recipes/removeRecipe');
+      }
+    },
   };
 </script>
-
-<style scoped></style>
