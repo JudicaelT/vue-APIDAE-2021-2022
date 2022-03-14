@@ -81,9 +81,6 @@ export default {
           () => {
             this.$router.push("/");
           },
-          (error) => {
-            this.message = "Utilisateur inexistant ou mot de passe incorrecte";
-          }
         );
       }
     },

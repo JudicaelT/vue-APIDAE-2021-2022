@@ -93,7 +93,7 @@ export default {
         return;
       }
       this.$store.dispatch("auth/register", this.user).then(
-        (data) => {
+        () => {
           this.$router.push("/connexion");
         },
         (error) => {

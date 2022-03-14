@@ -24,7 +24,7 @@
                     v-if="currentUser"
                     class="nav-item nav-link active"
                     to="/ajouter_recette"
-                    >Poster une recette</router-link
+                    >Ajouter une recette</router-link
                   >
                 </b-nav-item>
                 <b-nav-item>
@@ -40,12 +40,6 @@
             <router-link
               v-if="!currentUser"
               class="btn btn-astra rounded-pill d-none d-lg-block"
-              to="/connexion"
-              >Connexion</router-link
-            >
-            <router-link
-              v-if="!currentUser"
-              class="btn btn-astra rounded-pill d-none d-lg-block ml-3"
               to="/inscription"
               >Inscription</router-link
             >
