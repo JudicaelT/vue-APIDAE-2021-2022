@@ -27,7 +27,7 @@ export default {
  * Defining variables for reccuring values
  */
 :root {
-  --like: #f53954;
+  --like: #f74c66;
   --yale: #0d3f79;
   --astra: #f0ddac;
   --grey: #eaeae6;
