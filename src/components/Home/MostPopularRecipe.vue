@@ -25,7 +25,7 @@
 <script>
 export default {
   name: "MostPopularRecipe",
-  props: ["id", "name", "thumbnail"],
+  props: ["id", "name",],
   mounted() {
     this.setThumbnailHeight(0.6); // 60%
   },

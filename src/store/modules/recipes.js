@@ -103,12 +103,9 @@ const recipes = {
      * Add a recipe to the database
      * using 'postRecette' method from the API
      */
-    addRecipe({ commit }, data) {
+    addRecipe() {
       axios
-        .post(API_URL + "postRecette", data, { headers: authHeader() })
-        .then((res) => {
-          console.log(res.data);
-        })
+        .post(API_URL + "postRecette", { headers: authHeader() })
         .catch((error) => console.log(error));
     },
 
@@ -120,9 +117,6 @@ const recipes = {
       axios
         .get(API_URL + "deleteRecette/" + router.currentRoute.params.id, {
           headers: authHeader()
-        })
-        .then((res) => {
-          console.log(res.data);
         })
         .catch((error) => console.log(error));
     }

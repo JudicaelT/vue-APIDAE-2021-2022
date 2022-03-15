@@ -12,7 +12,6 @@
           v-for="(recipe, key) in mostPopularRecipes"
           :id="recipe._id"
           :name="recipe.nom"
-          :thumbnail="thumbnail"
           :key="key"
         ></MostPopularRecipe>
       </div>

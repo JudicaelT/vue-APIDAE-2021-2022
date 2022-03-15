@@ -4,7 +4,6 @@
       v-for="(recipe, key) in recipes"
       :id="recipe._id"
       :name="recipe.nom"
-      :thumbnail="thumbnail"
       :quantity="recipe.nbPersonne"
       :time="recipe.time"
       :level="recipe.level"
