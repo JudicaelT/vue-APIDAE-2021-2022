@@ -12,7 +12,7 @@ const recipes = {
   },
   mutations: {
     SET_RECIPES(state, data) {
-      state.recipe = data;
+      state.recipes = data;
     },
 
     SET_RECIPE(state, data) {

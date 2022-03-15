@@ -4,7 +4,7 @@
       v-for="(recipe, key) in recipes"
       :id="recipe._id"
       :name="recipe.nom"
-      :thumbnail="require('@/assets/img/' + recipe.thumbnail)"
+      :thumbnail="recipe.thumbnail"
       :quantity="recipe.nbPersonne"
       :time="recipe.time"
       :level="recipe.level"
