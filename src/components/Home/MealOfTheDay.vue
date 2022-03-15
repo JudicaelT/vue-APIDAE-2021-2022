@@ -44,18 +44,6 @@
 
   export default {
     name: "MealOfTheDay",
-    data() {
-      return {
-        MealOfTheDay: {
-          id: 1,
-          name: 'RecetteDuJour',
-          thumbnail: 'fried_chicken.png',
-          quantity: 5,
-          time: 20,
-          level: 'amateur',
-        },
-      }
-    },
     computed: {
       ...mapState('recipes', ['randomRecipe'])
     },

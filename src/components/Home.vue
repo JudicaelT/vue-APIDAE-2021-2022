@@ -18,18 +18,27 @@ export default {
     MostPopular,
     Recipes,
   },
+  computed: {
+    currentUser() {
+      return this.$store.state.auth.user;
+    },
+  },
+  mounted() {
+    if (!this.currentUser) {
+      this.$router.push("/connexion");
+    }
+  },
 };
 </script>
 
 <style scoped>
-
-  /**
+/**
    * /deep/ means child components will be affected by this style
    */
-  /deep/ .btn {
-    height: 45px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+/deep/ .btn {
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 </style>
