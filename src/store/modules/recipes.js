@@ -7,6 +7,7 @@ const recipes = {
         recipes: null,
         recipe: null,
         mostPopularRecipes: null,
+        randomRecipe: null,
     },
 	mutations: {
         SET_RECIPES(state, data) {
@@ -19,7 +20,11 @@ const recipes = {
 
         SET_MOST_POPULAR_RECIPES(state, data) {
             state.mostPopularRecipes = data
-        }
+        },
+
+        SET_RANDOM_RECIPE(state, data) {
+            state.randomRecipe = data
+        },
     },
 	actions: {
         /**
@@ -57,6 +62,33 @@ const recipes = {
                 commit('SET_MOST_POPULAR_RECIPES', res.data);
             })
             .catch(error => console.log(error))
+        },
+
+        /**
+         * Loads a random recipe from the database and sets it as the recipe
+         * of the day (for this user only). We use 'localStorage' to store
+         * the recipe (as a string) on the user's machine. We do the same thing
+         * to store the current date. If the date on the user's machine differs
+         * from the current date, we fetch another random recipe and set it as
+         * the new recipe of the day.
+         */
+        loadDailyRecipe({commit}) {
+
+            let currentDate = new Date().toLocaleDateString("fr");
+
+            if (currentDate != localStorage.getItem('lastChecked')) {
+                axios.get('http://localhost:5000/getRecetteRandom')
+                .then(res => {
+                    commit('SET_RANDOM_RECIPE', res.data);
+
+                    localStorage.setItem("recipeOfTheDay", JSON.stringify(res.data));
+                    localStorage.setItem("lastChecked", currentDate.toString());
+                })
+                .catch(error => console.log(error))
+            }
+            else {
+                commit('SET_RANDOM_RECIPE', JSON.parse(localStorage.getItem('recipeOfTheDay')));
+            }
         },
 
         /**

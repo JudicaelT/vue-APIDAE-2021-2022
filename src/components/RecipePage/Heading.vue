@@ -24,7 +24,7 @@
       </div>
     </div>
 		<div class="col">
-			<b-img class="img-fluid rounded-rounder" :src="getImageUrl( `${thumbnail}` )"></b-img>
+			<b-img class="img-fluid rounded-rounder" :src="`https://cookclico-3218.restdb.io/media/${thumbnail}`"></b-img>
 		</div>
 	</div>
 </template>
@@ -38,6 +38,7 @@
     methods: {
       deleteRecipe: function() {
         this.$store.dispatch('recipes/removeRecipe');
+        this.$router.push('/');
       }
     },
   };

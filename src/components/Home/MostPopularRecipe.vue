@@ -1,7 +1,7 @@
 <template>
     <div class="card rounded-rounder overflow-hidden mx-3">
         <div class="thumbnail overflow-hidden d-flex align-items-center">
-            <b-img fluid :src="getImageUrl( `${thumbnail}` )"></b-img>
+            <b-img fluid :src="`https://cookclico-3218.restdb.io/media/${thumbnail}`"></b-img>
         </div>
         <div class="h-0 d-flex justify-content-center align-items-center">
             <router-link class="btn btn-light btn-height position-absolute rounded-circle d-flex align-items-center" :to="`/ajouter_favori/${id}`">
