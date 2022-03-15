@@ -1,10 +1,7 @@
 <template>
   <div class="card rounded-rounder overflow-hidden mx-3">
     <div class="thumbnail overflow-hidden d-flex align-items-center">
-      <b-img
-        fluid
-        :src="`https://cookclico-3218.restdb.io/media/${thumbnail}`"
-      ></b-img>
+      <b-img fluid :src="getRandomIngredientImage()"></b-img>
     </div>
     <div class="h-0 d-flex justify-content-center align-items-center">
       <router-link
@@ -29,7 +26,6 @@
 export default {
   name: "MostPopularRecipe",
   props: ["id", "name", "thumbnail"],
-
   mounted() {
     this.setThumbnailHeight(0.6); // 60%
   },

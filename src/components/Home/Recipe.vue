@@ -4,10 +4,7 @@
       <div
         class="thumbnail overflow-hidden rounded-rounder d-flex align-items-center bg-light"
       >
-        <b-img
-          fluid
-          :src="`https://cookclico-3218.restdb.io/media/${thumbnail}`"
-        ></b-img>
+        <b-img fluid :src="getRandomIngredientImage()"></b-img>
       </div>
       <div class="row p-3">
         <div class="col text-truncate">
@@ -23,7 +20,7 @@
         </div>
         <div class="d-flex align-items-center px-3">
           <router-link
-            class="btn btn-yale rounded d-flex align-items-center shadow"
+            classfunctions="btn btn-yale rounded d-flex align-items-center shadow"
             :to="`/recette/${id}`"
           >
             <b-icon-eye class="text-light"></b-icon-eye>

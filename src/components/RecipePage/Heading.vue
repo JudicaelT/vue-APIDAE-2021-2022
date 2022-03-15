@@ -1,15 +1,22 @@
 <template>
-	<div class="row">
+  <div class="row">
     <div class="col-8">
       <div class="row">
         <div class="col">
           <h1>{{ name }}</h1>
-          <router-link class="btn btn-like shadow" :to="`/ajouter_favori/${id}`">
+          <router-link
+            class="btn btn-like shadow"
+            :to="`/ajouter_favori/${id}`"
+          >
             <b-icon-heart-fill class="text-astra"></b-icon-heart-fill>
             <i class="ml-2">{{ nbLike }} j'aimes</i>
           </router-link>
 
-          <button class="btn btn-danger shadow ml-2" id="button-delete" v-on:click="deleteRecipe()">
+          <button
+            class="btn btn-danger shadow ml-2"
+            id="button-delete"
+            v-on:click="deleteRecipe()"
+          >
             <b-icon-trash class="text-astra"></b-icon-trash>
             <i class="ml-2">supprimer</i>
           </button>
@@ -23,23 +30,26 @@
         </div>
       </div>
     </div>
-		<div class="col">
-			<b-img class="img-fluid rounded-rounder" :src="`https://cookclico-3218.restdb.io/media/${thumbnail}`"></b-img>
-		</div>
-	</div>
+    <div class="col">
+      <b-img
+        class="img-fluid rounded-rounder"
+        :src="getRandomIngredientImage()"
+      ></b-img>
+    </div>
+  </div>
 </template>
 
 <script>
-  export default {
-    name: "Heading",
+export default {
+  name: "Heading",
 
-    props: [ 'id', 'name', 'thumbnail', 'nbLike', 'description', ],
+  props: ["id", "name", "thumbnail", "nbLike", "description"],
 
-    methods: {
-      deleteRecipe: function() {
-        this.$store.dispatch('recipes/removeRecipe');
-        this.$router.push('/');
-      }
+  methods: {
+    deleteRecipe: function () {
+      this.$store.dispatch("recipes/removeRecipe");
+      this.$router.push("/");
     },
-  };
+  },
+};
 </script>

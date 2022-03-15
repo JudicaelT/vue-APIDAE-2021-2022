@@ -72,11 +72,6 @@ export default {
       return this.$store.state.auth.status.loggedIn;
     },
   },
-  mounted() {
-    if (this.loggedIn) {
-      this.$router.push("/connexion");
-    }
-  },
   methods: {
     handleRegister() {
       if (this.user.username.length <= 4) {

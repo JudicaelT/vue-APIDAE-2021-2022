@@ -7,9 +7,12 @@
 </template>
 
 <script>
-
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+
+require(`@/assets/img/ingredients/fried_chicken.png`);
+require(`@/assets/img/ingredients/ghibli1.jpeg`);
+require(`@/assets/img/ingredients/japanese_food.png`);
 
 export default {
   name: "App",
@@ -17,12 +20,10 @@ export default {
     Header,
     Footer,
   },
-}
-
+};
 </script>
 
 <style>
-
 /*
  * Defining variables for reccuring values
  */
@@ -43,13 +44,15 @@ export default {
 @font-face {
   font-family: "Roboto";
   font-weight: 400;
-  src: local("Roboto"), url("./assets/fonts/Roboto/Roboto-Regular.ttf") format("truetype");
+  src: local("Roboto"),
+    url("./assets/fonts/Roboto/Roboto-Regular.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "Roboto";
   font-weight: 500;
-  src: local("Roboto"), url("./assets/fonts/Roboto/Roboto-Bold.ttf") format("truetype");
+  src: local("Roboto"),
+    url("./assets/fonts/Roboto/Roboto-Bold.ttf") format("truetype");
 }
 
 /*

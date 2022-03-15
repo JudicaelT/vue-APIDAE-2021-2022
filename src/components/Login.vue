@@ -61,11 +61,6 @@ export default {
       return this.$store.state.auth.status.loggedIn;
     },
   },
-  created() {
-    if (this.loggedIn) {
-      this.$router.push("/");
-    }
-  },
   methods: {
     handleLogin() {
       if (this.user.username.length === 0) {
@@ -77,11 +72,9 @@ export default {
         return;
       }
       if (this.user.username && this.user.password) {
-        this.$store.dispatch("auth/login", this.user).then(
-          () => {
-            this.$router.push("/");
-          },
-        );
+        this.$store.dispatch("auth/login", this.user).then(() => {
+          this.$router.push("/");
+        });
       }
     },
   },
