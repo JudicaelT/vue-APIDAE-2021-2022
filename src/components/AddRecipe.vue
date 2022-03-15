@@ -7,14 +7,7 @@
           @submit.prevent="addRecipe"
           method="post"
         >
-          <AddInformations
-            :name="nom"
-            :description="description"
-            :nbPersonne="nbPersonne"
-            :time="time"
-            :level="level"
-            :preparation="preparation"
-          ></AddInformations>
+          <AddInformations></AddInformations>
           <AddIngredient></AddIngredient>
 
           <input
@@ -33,16 +26,6 @@ import AddIngredient from "@/components/AddRecipe/AddIngredient";
 
 export default {
   name: "AddRecipe",
-  data() {
-    return {
-      nom: "",
-      description: "",
-      nbPersonne: 1,
-      time: 10,
-      level: "Amateur",
-      preparation: "",
-    };
-  },
   components: {
     AddInformations,
     AddIngredient,

@@ -80,8 +80,6 @@
 				console.log(ingredientIndex);
 				if (ingredientIndex !== -1) {
 					this.ingredients.splice(ingredientIndex, 1);
-				} else {
-					console.log('toto');
 				}
 			},
 		}

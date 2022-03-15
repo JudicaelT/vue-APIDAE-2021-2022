@@ -34,7 +34,7 @@
 <script>
 export default {
   name: "Recipe",
-  props: ["id", "name", "thumbnail", "quantity", "time", "level"],
+  props: ["id", "name", "quantity", "time", "level"],
 
   mounted() {
     this.setThumbnailHeight(0.4); // 40% of current width

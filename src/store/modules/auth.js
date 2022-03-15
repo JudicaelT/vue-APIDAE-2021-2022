@@ -37,7 +37,6 @@ const posts = {
       commit("logout");
     },
     register({ commit }, user) {
-      console.log(user.username, user.password);
       return axios
         .post(API_URL + "register", {
           login: user.username,
