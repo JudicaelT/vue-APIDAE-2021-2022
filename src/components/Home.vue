@@ -18,16 +18,6 @@ export default {
     MostPopular,
     Recipes,
   },
-  computed: {
-    currentUser() {
-      return this.$store.state.auth.user;
-    },
-  },
-  mounted() {
-    if (!this.currentUser) {
-      this.$router.push("/connexion");
-    }
-  },
 };
 </script>
 
