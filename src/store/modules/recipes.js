@@ -81,7 +81,7 @@ const recipes = {
     loadDailyRecipe({ commit }) {
       let currentDate = new Date().toLocaleDateString("fr");
 
-      if (currentDate != localStorage.getItem("lastChecked")) {
+      if (currentDate !== localStorage.getItem("lastChecked")) {
         axios
           .get(API_URL + "getRecetteRandom", { headers: authHeader() })
           .then((res) => {
@@ -103,9 +103,9 @@ const recipes = {
      * Add a recipe to the database
      * using 'postRecette' method from the API
      */
-    addRecipe() {
+    addRecipe({ commit }, data) {
       axios
-        .post(API_URL + "postRecette", { headers: authHeader() })
+        .post(API_URL + "postRecette", data, { headers: authHeader() })
         .then((res) => {
           console.log(res.data);
         })

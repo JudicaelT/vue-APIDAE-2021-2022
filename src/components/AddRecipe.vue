@@ -1,36 +1,65 @@
 <template>
-	<div class="container">
-		<div class="row">
-			<div class="col d-flex justify-content-center align-items-center">
-				<form class="d-flex flex-column w-100" action="https://vuejs.org/" method="post">
+  <div class="container">
+    <div class="row">
+      <div class="col d-flex justify-content-center align-items-center">
+        <form
+          class="d-flex flex-column w-100"
+          @submit.prevent="addRecipe"
+          method="post"
+        >
+          <AddInformations
+            :name="nom"
+            :description="description"
+            :nbPersonne="nbPersonne"
+            :time="time"
+            :level="level"
+            :preparation="preparation"
+          ></AddInformations>
+          <AddIngredient></AddIngredient>
 
-					<AddInformations></AddInformations>
-					<AddIngredient></AddIngredient>
-					
-					<input class="btn btn-astra rounded-pill py-2 mt-4 mb-5 w-100" type="submit" />
-				</form>
-			</div>
-		</div>
-	</div>
+          <input
+            class="btn btn-astra rounded-pill py-2 mt-4 mb-5 w-100"
+            type="submit"
+          />
+        </form>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
-	import AddInformations from '@/components/AddRecipe/AddInformations';
-	import AddIngredient from '@/components/AddRecipe/AddIngredient';
+import AddInformations from "@/components/AddRecipe/AddInformations";
+import AddIngredient from "@/components/AddRecipe/AddIngredient";
 
-	export default {
-		name: "AddRecipe",
+export default {
+  name: "AddRecipe",
+  data() {
+    return {
+      nom: "",
+      description: "",
+      nbPersonne: 1,
+      time: 10,
+      level: "Amateur",
+      preparation: "",
+    };
+  },
+  components: {
+    AddInformations,
+    AddIngredient,
+  },
 
-		components: {
-			AddInformations,
-			AddIngredient,
-		},
-
-		methods: {
-			addRecipe: function () {
-				this.$store.dispatch('recipes/postRecipe');
-			}
-		}
-
-	};
+  methods: {
+    addRecipe: function () {
+      this.$store.dispatch("recipes/addRecipe", {
+        nom: this.nom,
+        description: this.description,
+        nbPersonne: this.nbPersonne,
+        time: this.time,
+        level: this.level,
+        preparation: this.preparation,
+        lines: [],
+      });
+    },
+  },
+};
 </script>
