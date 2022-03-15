@@ -12,32 +12,32 @@ Site web de recettes de cuisine conçu en Vue.js.
 
 Rien du plus simple ! Tout d'abord, installez node.js sur https://nodejs.org/en/,
 sans quoi, vous ne pourrez faire fonctionner l'application. Ensuite, ouvrez un terminal
-et allez à la racine du projet. Une fois à cet endroit, tappez la commande *npm install*
+et allez à la racine du projet. Une fois à cet endroit, tapez la commande *npm install*
 pour installer toutes les dépendances. Votre projet est à présent fonctionnel !
 Il ne vous reste plus qu'à entrer la commande *npm run serve* et à vous rendre sur http://localhost:8080/
 
 # Fonctionnalités manquantes
 
-à cause d'un manque organisationnel et de problèmes techniques, nous avons dû mettre au placart un certain
+à cause d'un manque organisationnel et de problèmes techniques, nous avons dû mettre au placard un certain
 nombre de fonctionnalités.
 
-Tout d'abord, nous avions conçu un sytème de "j'aimes" qui permettait à un utilisateur d'ajouter une recette
+Tout d'abord, nous avions conçu un système de "j'aimes" qui permettait à un utilisateur d'ajouter une recette
 à ses favoris. Malheureusement, nous avons pris la décision d'enlever cette fonctionnalité car celle-ci
 n'était pas demandée dans le sujet. Nous avons tout de même laissé le bouton "j'aime" dans l'espoir d'implémenter
 cette fonctionnalité dans les jours à venir.
 
 à notre grande honte, nous n'avons pas pu implémenter les méthodes d'ajout de recettes ainsi que la modification de
-ces dernières. Cela est certe dû à notre capacité organisationnelle déplorable, mais aussi aux différents problèmes techniques
-engendrés par codesandbox (corruption des images et polices, compile alors qu'il ne devrait pas, etc...). Dans l'ensemble, nous pouvons
+ces dernières. Cela est certes dû à notre capacité organisationnelle déplorable, mais aussi aux différents problèmes techniques
+engendrés par codesandbox (corruption des images et polices, compile alors qu'il ne devrait pas, etc....). Dans l'ensemble, nous pouvons
 dire que seules les parties *Read* et *Delete* du CRUD (Create Read Update Delete) ont été implémentées dans l'application.
 
 étant donné que nous n'avons pas réussi à récupérer les images de notre base de données (car il aurait fallu connecter directement
-l'application à restDB plutôt que de passer par notre API), nous avons écrit une fonction qui attribut une image aléatoire à la recette.
+l'application à restDB plutôt que de passer par notre API), nous avons écrit une fonction qui attribue une image aléatoire à une recette.
 
 # Fonctionnalités supplémentaires
 
-Même si il nous manque des fonctionnalités importantes, nous avons tout de même affiné les méthodes de récupération de recettes
-(ce qui, quelque par, est le but de l'application).
+Même s'il nous manque des fonctionnalités importantes, nous avons tout de même affiné les méthodes de récupération de recettes
+(ce qui, quelque part, est le but de l'application).
 
 Ainsi, il est possible de visionner les 3 recettes les plus populaires (celles ayants le plus de j'aimes) et de les consulter.
 
