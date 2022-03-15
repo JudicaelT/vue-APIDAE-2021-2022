@@ -1,10 +1,11 @@
 import axios from "axios";
+import { API_URL } from "../api-infos";
 
-const API_URL = "https://dsv-api-recipe.herokuapp.com/";
 const user = JSON.parse(localStorage.getItem("user"));
 const initialState = user
   ? { status: { loggedIn: true }, user }
   : { status: { loggedIn: false }, user: null };
+
 const posts = {
   namespaced: true,
   state: initialState,

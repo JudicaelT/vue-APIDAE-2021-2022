@@ -11,32 +11,48 @@
             <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
             <b-collapse id="nav-collapse" is-nav>
               <b-navbar-nav class="mx-auto">
-                <b-nav-item>
-                  <router-link
-                    class="nav-item nav-link active"
-                    to="/"
-                    v-if="currentUser"
+                <b-nav-item v-if="currentUser">
+                  <router-link class="nav-item nav-link active" to="/"
                     >Accueil</router-link
                   >
                 </b-nav-item>
-                <b-nav-item>
+                <b-nav-item v-if="currentUser">
                   <router-link
-                    v-if="currentUser"
                     class="nav-item nav-link active"
                     to="/ajouter_recette"
                     >Ajouter une recette</router-link
                   >
                 </b-nav-item>
-                <b-nav-item>
+                <b-nav-item v-if="!currentUser">
                   <router-link
-                    v-if="!currentUser"
-                    class="nav-item nav-link d-lg-none"
+                    class="nav-item btn btn-astra rounded-pill d-lg-none"
                     to="/connexion"
                     >Connexion</router-link
                   >
                 </b-nav-item>
+                <b-nav-item v-if="!currentUser">
+                  <router-link
+                    class="nav-item btn btn-astra rounded-pill d-lg-none"
+                    to="/inscription"
+                    >Inscription</router-link
+                  >
+                </b-nav-item>
+                <b-nav-item v-else>
+                  <div
+                    class="nav-item btn btn-astra rounded-pill d-lg-none"
+                    @click.prevent="logOut"
+                  >
+                    Déconnexion
+                  </div>
+                </b-nav-item>
               </b-navbar-nav>
             </b-collapse>
+            <router-link
+              v-if="!currentUser"
+              class="btn btn-astra rounded-pill d-none d-lg-block mr-3"
+              to="/connexion"
+              >Connexion</router-link
+            >
             <router-link
               v-if="!currentUser"
               class="btn btn-astra rounded-pill d-none d-lg-block"
