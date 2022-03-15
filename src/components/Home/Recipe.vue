@@ -2,7 +2,7 @@
     <div class="col-sm-6 col-md-4 mb-4">
         <div class="card overflow-hidden bg-astra shadow rounded-rounder">
             <div class="thumbnail overflow-hidden rounded-rounder d-flex align-items-center bg-light">
-                <b-img fluid :src="getImageUrl( `${thumbnail}` )"></b-img>
+                <b-img fluid :src="`https://cookclico-3218.restdb.io/media/${thumbnail}`"></b-img>
             </div>
             <div class="row p-3">
                 <div class="col text-truncate">
