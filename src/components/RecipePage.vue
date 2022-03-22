@@ -2,31 +2,31 @@
   <div class="container">
 
     <Heading
-    v-for="(rec, key) in recipe"
+    v-for="(rec, keyHeading) in recipe"
       :id="rec._id"
       :name="rec.nom"
       :thumbnail="rec.thumbnail"
       :nbLike="rec.likes"
       :description="rec.description"
-      :key="key"
+      :key="keyHeading"
     >
     </Heading>
 
     <div class="row my-5">
       <Preparation
-      v-for="(rec, key) in recipe"
+      v-for="(rec, keyPreparation) in recipe"
         :preparation="rec.preparation"
-        :key="key"
+        :key="keyPreparation"
       >
       </Preparation>
 
       <Informations
-      v-for="(rec, key) in recipe"
+      v-for="(rec, keyInformations) in recipe"
         :quantity="rec.nbPersonne"
         :time="rec.time"
         :level="rec.level"
         :ingredients="rec.lines"
-        :key="key">
+        :key="keyInformations">
       >
       </Informations>
     </div>

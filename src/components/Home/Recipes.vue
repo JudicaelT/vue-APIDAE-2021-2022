@@ -7,6 +7,7 @@
       :quantity="recipe.nbPersonne"
       :time="recipe.time"
       :level="recipe.level"
+      :thumbnail="recipe.thumbnail"
       :key="key"
     >
     </Recipe>

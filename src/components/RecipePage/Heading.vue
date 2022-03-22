@@ -33,7 +33,7 @@
     <div class="col">
       <b-img
         class="img-fluid rounded-rounder"
-        :src="getRandomIngredientImage()"
+        :src="thumbnail"
       ></b-img>
     </div>
   </div>
