@@ -1,10 +1,8 @@
 <template>
   <div class="col-sm-6 col-md-4 mb-4">
     <div class="card overflow-hidden bg-astra shadow rounded-rounder">
-      <div
-        class="thumbnail overflow-hidden rounded-rounder d-flex align-items-center bg-light"
-      >
-        <b-img fluid :src="getRandomIngredientImage()"></b-img>
+      <div class="thumbnail overflow-hidden rounded-rounder d-flex align-items-center bg-light">
+        <b-img fluid :src="thumbnail"></b-img>
       </div>
       <div class="row p-3">
         <div class="col text-truncate">
@@ -19,10 +17,7 @@
           </small>
         </div>
         <div class="d-flex align-items-center px-3">
-          <router-link
-            classfunctions="btn btn-yale rounded d-flex align-items-center shadow"
-            :to="`/recette/${id}`"
-          >
+          <router-link class="btn btn-yale rounded d-flex align-items-center shadow" :to="`/recette/${id}`">
             <b-icon-eye class="text-light"></b-icon-eye>
           </router-link>
         </div>
@@ -32,14 +27,14 @@
 </template>
 
 <script>
-export default {
-  name: "Recipe",
-  props: ["id", "name", "quantity", "time", "level"],
+  export default {
+    name: "Recipe",
+    props: ["id", "name", "quantity", "time", "level", "thumbnail"],
 
-  mounted() {
-    this.setThumbnailHeight(0.4); // 40% of current width
-  },
-};
+    mounted() {
+      this.setThumbnailHeight(0.4); // 40% of current width
+    },
+  };
 </script>
 
 <style scoped>

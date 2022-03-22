@@ -9,7 +9,10 @@ const initialState = user
 const posts = {
   namespaced: true,
   state: initialState,
+
   actions: {
+
+
     login({ commit }, user) {
       return axios
         .post(API_URL + "login", {
@@ -32,10 +35,14 @@ const posts = {
           }
         );
     },
+    
+
     logout({ commit }) {
       localStorage.removeItem("user");
       commit("logout");
     },
+
+
     register({ commit }, user) {
       return axios
         .post(API_URL + "register", {
@@ -52,23 +59,35 @@ const posts = {
           }
         );
     }
+
+
   },
   mutations: {
+
+
     loginSuccess(state, user) {
       state.status.loggedIn = true;
       state.user = user;
     },
+
+
     loginFailure(state) {
       state.status.loggedIn = false;
       state.user = null;
     },
+
+
     logout(state) {
       state.status.loggedIn = false;
       state.user = null;
     },
+
+
     registerSuccess(state) {
       state.status.loggedIn = false;
     },
+
+
     registerFailure(state) {
       state.status.loggedIn = false;
     }

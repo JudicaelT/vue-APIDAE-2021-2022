@@ -3,13 +3,15 @@ import router from "@/router";
 import { API_URL, authHeader } from "../api-infos";
 
 const recipes = {
+
   namespaced: true,
   state: {
-    recipes: null,
-    recipe: null,
-    mostPopularRecipes: null,
-    randomRecipe: null
+    recipes: [],
+    recipe: [],
+    mostPopularRecipes: [],
+    randomRecipe: [],
   },
+
   mutations: {
     SET_RECIPES(state, data) {
       state.recipes = data;
@@ -25,9 +27,16 @@ const recipes = {
 
     SET_RANDOM_RECIPE(state, data) {
       state.randomRecipe = data;
-    }
+    },
+
+    ADD_RECIPE(state, data) {
+      let recipes = state.recipes.concat(data);
+      state.recipes = recipes;
+    },
   },
+
   actions: {
+
     /**
      * Loads all recipes from the database
      * using 'getRecettes' method
@@ -40,6 +49,7 @@ const recipes = {
         })
         .catch((error) => console.log(error));
     },
+
 
     /**
      * Loads a recipe from the database
@@ -56,6 +66,7 @@ const recipes = {
         .catch((error) => console.log(error));
     },
 
+
     /**
      * Loads the 3 most popular recipes from the database
      * using 'getRecettesByPopularity' method from the API
@@ -69,6 +80,7 @@ const recipes = {
         })
         .catch((error) => console.log(error));
     },
+
 
     /**
      * Loads a random recipe from the database and sets it as the recipe
@@ -99,16 +111,22 @@ const recipes = {
       }
     },
 
+
     /**
      * Add a recipe to the database
      * using 'postRecette' method from the API
      */
-    addRecipe() {
+    addRecipe({ commit }, data) {
+
       axios
-        .post(API_URL + "postRecette", { headers: authHeader() })
+        .post(API_URL + "postRecette", data, { headers: authHeader() })
+        .then((res) => {
+          commit("ADD_RECIPE", res.data);
+        })
         .catch((error) => console.log(error));
     },
 
+    
     /**
      * Delete a recipe from the database
      * using 'deleteRecette/:id' method from the API (:id is passed to the url)

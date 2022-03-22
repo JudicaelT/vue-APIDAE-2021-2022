@@ -21,42 +21,34 @@
       </div>
 
       <div class="btn-group" role="group">
-        <router-link
-          class="btn btn-dark rounded px-4 mr-3 shadow"
-          :to="`/recette/${randomRecipe._id}`"
-        >
+        <router-link class="btn btn-dark rounded px-4 mr-3 shadow" :to="`/recette/${randomRecipe._id}`">
           Voir la recette
         </router-link>
-        <router-link
-          class="btn btn-light rounded-circle d-flex align-items-center shadow"
-          :to="`/ajouter_favori/${randomRecipe._id}`"
-        >
+        <router-link class="btn btn-light rounded-circle d-flex align-items-center shadow"
+          :to="`/ajouter_favori/${randomRecipe._id}`">
           <b-icon-heart-fill class="text-warning"></b-icon-heart-fill>
         </router-link>
       </div>
     </div>
 
     <div class="col-5 bg-img d-flex align-items-center">
-      <b-img
-        class="img-fluid rounded-rounder"
-        :src="getRandomIngredientImage()"
-      ></b-img>
+      <img class="img-fluid rounded-rounder" :src="randomRecipe.thumbnail">
     </div>
   </div>
 </template>
 
 <script>
-import { mapState } from "vuex";
+  import { mapState } from "vuex";
 
-export default {
-  name: "MealOfTheDay",
-  computed: {
-    ...mapState("recipes", ["randomRecipe"]),
-  },
-  beforeMount() {
-    this.$store.dispatch("recipes/loadDailyRecipe");
-  },
-};
+  export default {
+    name: "MealOfTheDay",
+    computed: {
+      ...mapState("recipes", ["randomRecipe"]),
+    },
+    created() {
+      this.$store.dispatch("recipes/loadDailyRecipe");
+    },
+  };
 </script>
 
 <style scoped>
